@@ -14,19 +14,27 @@ public class Main {
             String[] parts = i.split("/");
             if (parts[0].equals("Apple")) {
                 breakfast[counter] = new Apple(parts[1].toUpperCase());
-                apples++;
+                //apples++;
             }
             if (parts[0].equals("Cheese")) {
                 breakfast[counter] = new Cheese();
-                cheese++;
+                //cheese++;
             }
             if (parts[0].equals("Tea")) {
                 breakfast[counter] = new Tea(parts[1].toUpperCase());
-                tea++;
+                //tea++;
+
             }
         }
         for (Food item:breakfast){
-            if(item!=null){item.consume();}
+            if(item!=null){item.consume();
+            if (item.equals(new Apple("big")))
+            apples++;
+            if (item.equals(new Cheese()))
+                cheese++;
+            if (item.equals(new Tea("green")))
+                tea++;
+            }
             else break;
         }
         System.out.println(apples+"Apples");
